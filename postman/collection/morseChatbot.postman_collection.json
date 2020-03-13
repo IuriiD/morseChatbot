@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "e07b1fc7-645d-4ec2-a2f1-da2676537c1b",
+		"name": "morseChatbot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Board LED >> ON",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{backend_ip}}/on",
+					"host": [
+						"{{backend_ip}}"
+					],
+					"path": [
+						"on"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Board LED >> OFF",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{backend_ip}}/off",
+					"host": [
+						"{{backend_ip}}"
+					],
+					"path": [
+						"off"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test Sequence",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"morseScript\": [{\"on\":1000}, {\"off\": 1000}, {\"on\": 1000}, {\"off\": 1000}, {\"on\": 1000}, {\"off\": 1000}, {\"on\": 1000}, {\"off\": 1000}, {\"on\": 1000}]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{backend_ip}}",
+					"host": [
+						"{{backend_ip}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
